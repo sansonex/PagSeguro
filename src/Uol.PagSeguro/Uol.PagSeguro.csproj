@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Matheus Sansone Pinheiro</Authors>
+    <Company>Sansone</Company>
+    <RepositoryUrl>https://github.com/sansonex/PagSeguro</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/sansonex/PagSeguro</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
