@@ -1,4 +1,4 @@
-#### Projeto que utiliza a Api de Pagseguro.
+#### Projeto que utiliza a Api da PagSeguro.
 
 ## Features:
 
