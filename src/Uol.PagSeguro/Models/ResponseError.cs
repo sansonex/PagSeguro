@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Uol.PagSeguro
+namespace Uol.PagSeguro.Models
 {
 	public class ResponseError
 	{

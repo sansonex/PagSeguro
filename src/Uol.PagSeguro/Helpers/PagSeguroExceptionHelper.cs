@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Uol.PagSeguro.Extensions;
+using Uol.PagSeguro.Models;
 
 namespace Uol.PagSeguro.Helpers
 {
@@ -16,7 +16,7 @@ namespace Uol.PagSeguro.Helpers
 
 			if (content?.Errors == null || content.Errors?.Count == 0)
 			{
-				errors.Add(new Error() { Code = 0, Message = "unknown error" });
+				errors.Add(new Error {Code = 0, Message = "unknown error"});
 				return errors;
 			}
 

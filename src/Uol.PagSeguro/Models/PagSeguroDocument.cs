@@ -1,4 +1,4 @@
-﻿namespace Uol.PagSeguro
+﻿namespace Uol.PagSeguro.Models
 {
 	public class PagSeguroDocument
 	{
