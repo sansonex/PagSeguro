@@ -20,6 +20,8 @@ namespace Uol.PagSeguro.Helpers
 				return errors;
 			}
 
+			errors.AddRange(content.Errors);
+
 			return errors;
 		}
 	}
