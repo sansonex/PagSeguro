@@ -10,7 +10,7 @@
     <PackageProjectUrl>https://github.com/sansonex/PagSeguro</PackageProjectUrl>
     <PackageId>Sansone.Uol.PagSeguro</PackageId>
     <Product>Sansone.Uol.PagSeguro</Product>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
