@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace Uol.PagSeguro
+namespace Uol.PagSeguro.Models
 {
 	public class PagSeguroPaymentMethod
 	{

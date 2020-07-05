@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Uol.PagSeguro.Exceptions;
 using Uol.PagSeguro.Extensions;
 using Uol.PagSeguro.Helpers;
+using Uol.PagSeguro.Interfaces;
+using Uol.PagSeguro.Models;
 using Uol.PagSeguro.Settings;
 
 namespace Uol.PagSeguro.Services
@@ -15,10 +14,11 @@ namespace Uol.PagSeguro.Services
 	public class BoletoService : IBoletoService
 	{
 		private readonly HttpClient _client;
-		private PagSeguroSettings _settings;
-		private ILogger _logger;
+		private readonly ILogger _logger;
+		private readonly PagSeguroSettings _settings;
 
-		public BoletoService(IHttpClientFactory httpClientFactory, ILoggerFactory loggerFactory, PagSeguroSettings settings)
+		public BoletoService(IHttpClientFactory httpClientFactory, ILoggerFactory loggerFactory,
+			PagSeguroSettings settings)
 		{
 			_client = httpClientFactory.CreateClient(nameof(PagSeguroClient));
 			_settings = settings;
@@ -33,16 +33,19 @@ namespace Uol.PagSeguro.Services
 
 				var queryString = new Dictionary<string, string>
 				{
-					{nameof(_settings.Email).ToLower(),_settings.Email}, {nameof(_settings.Token).ToLower(),_settings.Token}
+					{nameof(_settings.Email).ToLower(), _settings.Email},
+					{nameof(_settings.Token).ToLower(), _settings.Token}
 				};
 
 				using var response = await _client.PostAsJsonAsync(_settings.BoletoRequestUrl,
-																   request,
-																   _settings.Encoding,
-																   queryString);
+				                                                   request,
+				                                                   _settings.Encoding,
+				                                                   queryString);
 
 				if (!response.IsSuccessStatusCode)
-					throw new PagSeguroException(response.StatusCode, await PagSeguroExceptionHelper.HandlePagSeguroInvalidRequest(response));
+					throw new PagSeguroException(response.StatusCode,
+					                             await PagSeguroExceptionHelper
+						                             .HandlePagSeguroInvalidRequest(response));
 
 				var result = await response.Content.ReadAsJsonAsync<PagSeguroBoletoResponse>();
 
@@ -54,10 +57,5 @@ namespace Uol.PagSeguro.Services
 				throw e;
 			}
 		}
-	}
-
-	public interface IBoletoService
-	{
-		Task<PagSeguroBoletoResponse> CreateBoletoAsync(PagSeguroBoletoRequest request);
 	}
 }

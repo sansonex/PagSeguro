@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
+using Uol.PagSeguro.Interfaces;
 using Uol.PagSeguro.Services;
 using Uol.PagSeguro.Settings;
 

@@ -1,11 +1,10 @@
 ﻿using System.Xml.Serialization;
 
-namespace Uol.PagSeguro
+namespace Uol.PagSeguro.Models
 {
 	public class PagSeguroTransaction
 	{
 		[XmlElement(ElementName = "date")] public string Date { get; set; }
-
 		[XmlElement(ElementName = "code")] public string Code { get; set; }
 
 
