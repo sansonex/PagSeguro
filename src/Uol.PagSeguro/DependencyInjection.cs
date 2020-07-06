@@ -12,7 +12,7 @@ namespace Uol.PagSeguro
 		{
 			services.AddSingleton(settings);
 
-			services.AddScoped<IBoletoService, BoletoService>();
+			services.AddScoped<IPagSeguroBoletoService, PagSeguroBoletoService>();
 
 			services.AddHttpClient<PagSeguroClient>(opt =>
 			{

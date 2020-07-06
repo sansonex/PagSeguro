@@ -12,7 +12,7 @@ namespace Uol.PagSeguro.Models
 
 		public string Description { get; set; }
 
-		public DateTime FirstDueDate { get; set; }
+		public string FirstDueDate { get; set; }
 
 		public string Instructions { get; set; }
 
