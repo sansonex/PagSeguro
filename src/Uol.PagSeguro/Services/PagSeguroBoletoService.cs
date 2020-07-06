@@ -11,13 +11,13 @@ using Uol.PagSeguro.Settings;
 
 namespace Uol.PagSeguro.Services
 {
-	public class BoletoService : IBoletoService
+	public class PagSeguroBoletoService : IPagSeguroBoletoService
 	{
 		private readonly HttpClient _client;
 		private readonly ILogger _logger;
 		private readonly PagSeguroSettings _settings;
 
-		public BoletoService(IHttpClientFactory httpClientFactory, ILoggerFactory loggerFactory,
+		public PagSeguroBoletoService(IHttpClientFactory httpClientFactory, ILoggerFactory loggerFactory,
 			PagSeguroSettings settings)
 		{
 			_client = httpClientFactory.CreateClient(nameof(PagSeguroClient));

@@ -3,7 +3,7 @@ using Uol.PagSeguro.Models;
 
 namespace Uol.PagSeguro.Interfaces
 {
-	public interface IBoletoService
+	public interface IPagSeguroBoletoService
 	{
 		Task<PagSeguroBoletoResponse> CreateBoletoAsync(PagSeguroBoletoRequest request);
 	}
