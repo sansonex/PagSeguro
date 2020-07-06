@@ -5,7 +5,7 @@
 
 ## Motivation
 
-This project was created to consume a specific PagSeguro Api in a .NET Core Project. That API can create "Boleto" with specific due date D+1 configuration.
+This project was created to consume a specific PagSeguro Api that can create "Boleto" with specific due date D+1 configuration.
 
 ## Features
 
